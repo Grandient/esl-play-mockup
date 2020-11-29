@@ -26,8 +26,8 @@ function MatchFilter(){
   return (
     <div >
       <select className="date-select">
-        <option className="date-option" value="asc">Date</option>
-        <option className="date-option" value="desc">Date</option>
+        <option className="date-option" value="asc">Date &#xf062;</option>
+        <option className="date-option" value="desc">Date &#xf063;</option>
       </select>
     </div>
   )
