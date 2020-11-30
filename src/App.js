@@ -2,7 +2,8 @@ import React from 'react';
 //import { createStore } from 'redux';
 import axios from 'axios';
 import './App.css';
-
+//import example from '../src/example.json'
+import moment from 'moment'
 
 class App extends React.Component {
   constructor(props) {
@@ -10,11 +11,17 @@ class App extends React.Component {
     this.state = {
       name: "Loading..",
       start_date: "Loading...",
-      matches: []
+      matches: [],
+      filter: "asc"
     }
+    this.onChange = this.handleChange.bind(this);
   }
 
-
+  handleChange(e) {
+    console.log(e.target.value)
+    this.setState({filter: e.target.value});
+  }
+  
   componentDidMount() {
     let team_urls = [];
     let name = "";
@@ -25,6 +32,7 @@ class App extends React.Component {
           // handle success
           name = response.data.name.full;
           start_date = new Date(response.data.timeline.checkIn.begin).toString();
+          start_date = moment(start_date).format('Do MMMM YYYY')
         })
         .catch(function (error) {
           // handle error
@@ -47,7 +55,8 @@ class App extends React.Component {
             }
             let team_url = "https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/teams/"
             team_urls.push(team_url + team1, team_url+team2)
-            matches.push({start: start, team1: team1, team1_points: team1_points, team2: team2, team2_points: team2_points, winner: result})
+            let date = moment(start).format('hh:mm')
+            matches.push({start: start, team1: team1, team1_points: team1_points, team2: team2, team2_points: team2_points, winner: result, date: date})
           })
         })
         .catch(function (error) {
@@ -64,7 +73,7 @@ class App extends React.Component {
             }).catch(() => results.push("Team Not Found."))
             )
           })
-          Promise.all(promises).then(() => {
+          await Promise.all(promises).then(() => {
             let team_arr = []
             for (let index = 0; index < results.length; index++) {
               let t1 = results[index];
@@ -83,19 +92,18 @@ class App extends React.Component {
               matches[index].team1 = team_arr[index].team1;
               matches[index].team2 = team_arr[index].team2;
             }
-            console.log(matches)
-            this.setState({name: name})
-            this.setState({start_date: start_date})
-            this.setState({matches: matches})
           })
+          console.log(matches);
+          this.setState({matches: matches, start_date: start_date, name: name})
         }.bind(this));
   }
+  
 
   render() {
     return (
       <div className="app">
         <Header name={this.state.name} date={this.state.start_date}/>
-        <MatchList matches={this.state.matches}/>
+        <MatchList filter={this.state.filter} matches={this.state.matches} onChange={this.onChange}/>
       </div>
     );
   }
@@ -112,10 +120,10 @@ function Header(props){
   )
 }
 
-function MatchFilter(){
+function MatchFilter(props){
   return (
-    <div >
-      <select className="date-select">
+    <div>
+      <select className="date-select" onChange={(e) => props.onChange(e)}>
         <option className="date-option" value="asc">Date &#xf062;</option>
         <option className="date-option" value="desc">Date &#xf063;</option>
       </select>
@@ -125,18 +133,28 @@ function MatchFilter(){
 
 function MatchList(props){
   let loading = true;
-  if(props.matches != []){
+  let matches = props.matches;
+  if(matches != []){
     loading = false;
   }
-  props.matches.map(element => {
-    console.log(element)
-  })
+  if(props.filter == "asc"){
+    matches.sort(function(a, b){
+      return new Date(b.start) - new Date(a.start)
+    })
+  } else {
+    matches.sort(function(a, b){
+      return new Date(a.start) - new Date(b.start)
+    })
+  }
+
   return (
     <div className="match-list-container">
-      <MatchFilter/>
-      {props.matches.map( match => {
-        <Match match={match}/>
-      })}
+      <MatchFilter onChange={props.onChange}/>
+      <div>
+        {matches.map(match => (
+          <Match match={match}/>
+        ))}
+      </div>
     </div>
   )
 }
@@ -144,16 +162,17 @@ function MatchList(props){
 function Match(props){
   let t1win = false;
   let t2win = false;
+
   if(props.match.winner){
     t1win = true;
   } else {
     t2win = true;
   }
-  console.log("test")
+
   return (
     <div className="match-outer-container">
       <div className="match-inner-container">
-        <div className="match-start">{props.match.start}</div>
+        <div className="match-start">{props.match.date}</div>
         <div className={t1win ? "match-team-container winner" : "match-team-container loser"}>
           <div className="match-team">{props.match.team1}</div>
           <div className={t1win ? "points points-winner" : "points"}>{props.match.team1_points}</div>
