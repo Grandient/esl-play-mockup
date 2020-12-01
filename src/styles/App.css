@@ -1,0 +1,27 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css");
+body {
+  font-family: 'Roboto', sans-serif;
+  background: lightgray;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  font-family: 'FontAwesome', sans-serif;
+}
+
+.app {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%
+}
+
+
+
+
+

@@ -1,0 +1,24 @@
+.header-outer-container {
+  border-top: 10px solid green;
+  width: 30vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.header-inner-container {
+  margin: 2vh 2vh;
+}
+
+.header-league-name {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+
+.header-start-date {
+  margin: 0px;
+  font-size: 1vw;
+  font-weight: 400;
+}

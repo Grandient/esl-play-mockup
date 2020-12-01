@@ -1,0 +1,21 @@
+.date-select{
+    border: 1px solid gray;
+    display: flex;
+    margin-left: auto;
+    justify-content:right;
+    margin-right: 1vw;
+    margin-top: 2vh;
+    width: 3.5vw;
+    height: 3.5vh;
+    text-indent: 0.75vw;
+    margin-bottom: 2vh;
+  }
+  
+  .date-select:focus {
+    outline:none;
+  }
+  
+  .date-option {
+    text-align: center;
+  }
+  
