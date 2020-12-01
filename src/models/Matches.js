@@ -20,7 +20,7 @@ async function getMatches(url){
             if(winner == 1){ 
                 result = true;
             }
-            let team_url = "https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/teams/"
+            let team_url = "https://api.eslgaming.com/play/v1/teams/"
             team_urls.push(team_url + team1, team_url+team2)
             let date = moment(start).format('hh:mm')
             matches.push({start: start, team1: team1, team1_points: team1_points, team2: team2, team2_points: team2_points, winner: result, date: date})

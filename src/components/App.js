@@ -38,7 +38,6 @@ class App extends React.Component {
       filter: "asc"
     }
     this.onChange = this.handleChange.bind(this);
-    axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
   }
 
   // Handle change for sorting.
@@ -49,9 +48,9 @@ class App extends React.Component {
 
   
   async componentDidMount() {
-    let result = await getEvent('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/177161')
+    let result = await getEvent('https://api.eslgaming.com/play/v1/leagues/177161')
     this.setState({start_date: result.start_date, name: result.name});
-    result = await getMatches('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/177161/results')
+    result = await getMatches('https://api.eslgaming.com/play/v1/leagues/177161/results')
     this.setState({matches: result});
   }
   
