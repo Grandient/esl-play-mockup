@@ -34,7 +34,7 @@ class App extends React.Component {
     this.state = {
       name: "Loading..",
       start_date: "Loading...",
-      matches: example,
+      matches: [],
       filter: "asc"
     }
     this.onChange = this.handleChange.bind(this);
