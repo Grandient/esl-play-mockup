@@ -1,6 +1,5 @@
 // Libraries
 import React from 'react';
-import moment from 'moment';
 import axios from 'axios';
 
 //import { createStore } from 'redux';
@@ -35,7 +34,7 @@ class App extends React.Component {
     this.state = {
       name: "Loading..",
       start_date: "Loading...",
-      matches: [],
+      matches: example,
       filter: "asc"
     }
     this.onChange = this.handleChange.bind(this);
@@ -51,7 +50,6 @@ class App extends React.Component {
   
   async componentDidMount() {
     let result = await getEvent('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/177161')
-    console.log(result)
     this.setState({start_date: result.start_date, name: result.name});
     result = await getMatches('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/177161/results')
     this.setState({matches: result});
