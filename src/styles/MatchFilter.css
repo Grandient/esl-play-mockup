@@ -19,44 +19,68 @@
   }
 
 
-@media (max-width: 375px) {
-    .date-select {
-      width: 15vw;
-    }
-}
 
-@media (max-width: 450px) {
+@media screen and (max-width: 2000px) {
   .date-select {
-    width: 12vw;
+    width: 3.5vw;
   }
 }
 
-@media (max-width: 580px){
+
+@media screen and (max-width: 1575px) {
   .date-select {
-    width: 10vw;
+    width: 3.75vw;
   }
 }
 
-@media (max-width: 768px){
-  .date-select {
-    width: 8vw;
-  }
-}
 
-@media (max-width: 1024px) {
-  .date-select {
-    width: 7vw;
-  }
-}
-
-@media (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .date-select {
     width: 4vw;
   }
 }
 
-@media (max-width: 2000px) {
+@media screen and (max-width: 1400px) {
   .date-select {
-    width: 3.5vw;
+    width: 4.5vw;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .date-select {
+    width: 5vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .date-select {
+    width: 7vw;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  .date-select {
+    width: 8vw;
+  }
+}
+
+@media screen and (max-width: 580px){
+  .date-select {
+    width: 10vw;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .date-select {
+    width: 12vw;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  .date-select {
+    width: 15vw;
   }
 }

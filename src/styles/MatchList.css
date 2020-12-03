@@ -4,3 +4,22 @@
     height: 70vh;
     border-radius: 4px;
   }
+
+  @media screen and (max-width: 1200px) {
+    .match-list-container{
+      width: 50vw;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .match-list-container{
+      width: 70vw;
+    }
+  }
+
+  
+  @media screen and (max-width: 500px) {
+    .match-list-container{
+      width: 90vw;
+    }
+  }
