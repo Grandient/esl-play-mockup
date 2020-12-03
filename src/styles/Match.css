@@ -26,12 +26,12 @@
   }
   
   .winner {
-    border-left: 5px green solid;
+    border-left: 5px #28b662 solid;
     border-radius: 2px;
   }
   
   .loser {
-    border-left: 5px red solid;
+    border-left: 5px #e43726 solid;
     border-radius: 2px;
   }
   
