@@ -5,7 +5,6 @@
     justify-content:right;
     margin-right: 1vw;
     margin-top: 2vh;
-    width: 3.5vw;
     height: 3.5vh;
     text-indent: 0.75vw;
     margin-bottom: 2vh;
@@ -18,4 +17,46 @@
   .date-option {
     text-align: center;
   }
-  
+
+
+@media (max-width: 375px) {
+    .date-select {
+      width: 15vw;
+    }
+}
+
+@media (max-width: 450px) {
+  .date-select {
+    width: 12vw;
+  }
+}
+
+@media (max-width: 580px){
+  .date-select {
+    width: 10vw;
+  }
+}
+
+@media (max-width: 768px){
+  .date-select {
+    width: 8vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .date-select {
+    width: 7vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  .date-select {
+    width: 4vw;
+  }
+}
+
+@media (max-width: 2000px) {
+  .date-select {
+    width: 3.5vw;
+  }
+}

@@ -4,8 +4,8 @@ import getEvent from '../../models/Event';
 export const downloadEventSlice = createSlice({
   name: 'downloadEvent',
   initialState: {
-    name: "",
-    start_date: ""
+    name: "LOADING...",
+    start_date: "LOADING..."
   },
   reducers: {
     recieveEvent: (state, action) => {
