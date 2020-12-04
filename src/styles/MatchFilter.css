@@ -6,7 +6,8 @@
     margin-right: 1vw;
     margin-top: 2vh;
     height: 3.5vh;
-    text-indent: 0.75vw;
+    width: auto;
+    padding: 6px;
     margin-bottom: 2vh;
   }
   
@@ -19,68 +20,3 @@
   }
 
 
-
-@media screen and (max-width: 2000px) {
-  .date-select {
-    width: 3.5vw;
-  }
-}
-
-
-@media screen and (max-width: 1575px) {
-  .date-select {
-    width: 3.75vw;
-  }
-}
-
-
-@media screen and (max-width: 1440px) {
-  .date-select {
-    width: 4vw;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .date-select {
-    width: 4.5vw;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .date-select {
-    width: 5vw;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .date-select {
-    width: 7vw;
-  }
-}
-
-
-@media screen and (max-width: 768px){
-  .date-select {
-    width: 8vw;
-  }
-}
-
-@media screen and (max-width: 580px){
-  .date-select {
-    width: 10vw;
-  }
-}
-
-
-@media screen and (max-width: 450px) {
-  .date-select {
-    width: 12vw;
-  }
-}
-
-
-@media screen and (max-width: 375px) {
-  .date-select {
-    width: 15vw;
-  }
-}

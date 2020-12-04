@@ -1,6 +1,5 @@
 // Libraries
-import React, {useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 
 // Components
 import Header from './Header';
@@ -12,11 +11,6 @@ import '../styles/Header.css';
 import '../styles/MatchFilter.css';
 import '../styles/Match.css';
 import '../styles/MatchList.css';
-
-
-// Example data
-//import example from '../example.json';
-
 
 // State:
 // name: Name of the event. (String)
@@ -30,9 +24,5 @@ function App() {
         <MatchList/>
       </div>
   );
-
 }
-        //result = await getMatches('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/177161/results')
-        //this.setState({matches: result});
-//
 export default App;
